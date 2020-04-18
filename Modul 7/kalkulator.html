@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>Kalkulator Switch Case</title>
+    </head>
+    <style>
+        .form{
+            height: 40px;
+            width: 300px;
+            font-size: 25px;
+            font-weight: bold;
+            padding: 10px 5px 10px 5px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #636e72;
+            background-color: #fff;
+        }
+        .button{
+            height: 40px;
+            width: 68px;
+            background-color: #000;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            border: 0px;
+            border-radius: 5px;
+            margin: 10px 5px 0px 0px;
+        }
+    </style>
+    <body>
+        <table align="center" style="margin-top: 50px;">
+            <tr>
+                <th></th>
+                <th style="font-size: 20px;">Kalkulator Switch Case</th>
+            </tr>
+            <tr>
+                <td>Bil 1</td>
+                <td><input type="number" class="form" id="bil1" style="text-align: center;"></td>
+            </tr>
+            <tr>
+                <td>Bil 2</td>
+                <td><input type="number" class="form" id="bil2" style="text-align: center;"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button class="button" onclick="return kalkulator(1)">+</button>
+                    <button class="button" onclick="return kalkulator(2)">-</button>
+                    <button class="button" onclick="return kalkulator(3)">*</button>
+                    <button class="button" onclick="return kalkulator(4)">/</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Hasil</td>
+                <td><input type="text" readonly class="form" id="hasil" style="text-align: center;"></td>
+            </tr>
+        </table>
+        <script language="javascript" type="text/javascript">
+            function kalkulator(operasi){
+                var bil1    = parseFloat(document.getElementById("bil1").value);
+                var bil2    = parseFloat(document.getElementById("bil2").value);
+                var total;
+                if(isNaN(bil1) || isNaN(bil2)){
+                    alert("Inputan harus angka");
+                }
+                switch(operasi){
+                    case 1:
+                        total = bil1+bil2;
+                        break;
+                    case 2:
+                        total = bil1-bil2;
+                        break;
+                    case 3:
+                        total = bil1*bil2;
+                        break;
+                    case 4:
+                        total = bil1/bil2;
+                        break;
+                }
+                document.getElementById("hasil").value = total;
+            }
+        </script>
+    </body>
+</html>
